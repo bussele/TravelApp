@@ -8,14 +8,6 @@ const express = require('express');
 // Start up an instance of app
 const app = express();
 
-// Initialize the main project folder
-app.use(express.static('dist'))
-
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile('dist/index.html');w
-})
-
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
 const bodyParser = require('body-parser')
@@ -26,6 +18,27 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
+// Initialize the main project folder
+app.use(express.static('dist'));
+
+
+// Setup Server
+const port = 3000;
+
+const server = app.listen(port, listening);
+
+function listening() {
+    console.log("server running");
+    console.log(`running on localhost: ${port}`);
+};
+
+
+app.get('/', function (req, res) {
+    // res.sendFile('dist/index.html')
+    res.sendFile(path.resolve('dist/index.html'))
+})
+
+// GET
 app.get('/all', function (req, res) {
     res.send(projectData);
 });

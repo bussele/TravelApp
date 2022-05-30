@@ -1,7 +1,7 @@
 {
   "name": "travel-app",
   "version": "1.0.0",
-  "description": "Final project for the Udacity Frontend Developer Course",
+  "description": "Final project for the Udacity Frontend Developer Nanodegree",
   "main": "server.js",
   "scripts": {
     "test": "jest",

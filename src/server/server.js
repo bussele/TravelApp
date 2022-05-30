@@ -3,10 +3,20 @@ projectData = {};
 
 
 // Require Express to run server and routes
+var path = require('path')
 const express = require('express');
 
 // Start up an instance of app
 const app = express();
+
+// Initialize the main project folder
+app.use(express.static('dist'));
+
+
+app.get('/', function (req, res) {
+    // res.sendFile('dist/index.html')
+    res.sendFile(path.resolve('dist/index.html'))
+})
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
@@ -18,8 +28,7 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-// Initialize the main project folder
-app.use(express.static('dist'));
+
 
 
 // Setup Server
@@ -33,10 +42,6 @@ function listening() {
 };
 
 
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('dist/index.html'))
-})
 
 // GET
 app.get('/all', function (req, res) {

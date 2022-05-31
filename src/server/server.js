@@ -15,14 +15,14 @@ app.use(express.static('dist'))
 console.log(__dirname)
 
 // Setup Server
-const port = 8080;
+const port = 3000;
 
 const server = app.listen(port, listening);
 
 
 app.get('/', function (req, res) {
-    res.sendFile('./dist/index.html')
-    //*res.sendFile(path.resolve('dist/index.html'))
+    res.sendFile('dist/index.html')
+    //* res.sendFile(path.resolve('dist/index.html'))
 });
 
 function listening() {

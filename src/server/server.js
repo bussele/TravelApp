@@ -14,9 +14,9 @@ app.use(express.static('dist'));
 
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('dist/index.html'))
-})
+    res.sendFile('./dist/index.html')
+    //*res.sendFile(path.resolve('dist/index.html'))
+});
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.

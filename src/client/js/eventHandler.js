@@ -16,7 +16,7 @@ function handleSubmit(evt) {
     alert('You must travel less than 16 days from now!');
     return false
   } else {
-    Client.postInput('http://localhost:30000/add', { location: locationURI, date: dateStrVal })
+    Client.postInput('http://localhost:3000/add', { location: locationURI, date: dateStrVal })
     location.classList.remove('invalid');
     dateStr.classList.remove('invalid');
     return true

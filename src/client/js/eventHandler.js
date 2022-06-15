@@ -1,5 +1,6 @@
 import { dateDiff } from "./dateHandler";
 
+// Handles the click & calls the other functions
 function handleSubmit(evt) {
   const location = document.getElementById('place')
   const dateStr = document.getElementById('start')

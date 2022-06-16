@@ -3,7 +3,7 @@ import { dateDiff } from "./dateHandler";
 // Handles the click & calls the other functions
 function handleSubmit(evt) {
   const location = document.getElementById('place')
-  const dateStr = document.getElementById('start')
+  const dateStr = document.getElementById('trip-start')
   const dateStrVal = dateStr.value
   const locationURI = encodeURI(location.value)
   if (location.value.length <= 0 || dateStrVal.length <= 0) {

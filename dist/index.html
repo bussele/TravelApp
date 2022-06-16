@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Open+Sans:ital@1&family=Sofia&display=swap" rel="stylesheet">
+<link href="main.css" rel="stylesheet"></head>
+<body>
+  <header id="header">
+    <h1>Travel is Joy</h1>
+  </header>
+  <main>
+    <form id="form" onsubmit="return false">↩
+      <label for="place">Destination:</label>↩
+      <input type="text" id="place" name="place" pattern="[a-zA-Z,\s]{2,85}" title="valid city" required><br>↩
+      <label for="trip-start">Start date:</label>↩
+      <input type="date" id="trip-start" name="trip-start" min="2022-01-01" max="2025-12-31" required><br>↩
+      <input type="submit" id="generate" value="save trip">↩
+    </form>↩
+    <div id="all-posts"></div>
+  </main>
+  <footer>
+  </footer>
+  
+<!-- Service workers added -->
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/service-worker.js');
+});
+}
+</script>
+
+<script type="text/javascript" src="main.js"></script></body>
+
+
+</html>

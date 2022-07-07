@@ -45,7 +45,7 @@ body {
     font-family: 'Fasthand', cursive;
     padding: 8px 12px 6px;
     background-color: black;
-    color: black;
+    color: white;
     border-radius: 20px;
     margin-top: 4px;
     text-transform: uppercase;
@@ -55,7 +55,7 @@ body {
 
     &:hover {
       border: white;
-      color: black;
+      color: white-;
       background-color: black;
       transition: ease 0.25s;
     }

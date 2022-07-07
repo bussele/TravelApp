@@ -1,13 +1,11 @@
-import fetch, { Response } from 'node-fetch';
-jest.mock('node-fetch');
 
-import { updateUI } from '../src/client/js/updateUI'
+const supertest = require('supertest'); 
+const app = require('../src/server/server'); 
+test("Testing if 200", async () => {    
+  await supertest(app).get('/test').expect(200);  
+});  
 
-describe("Testing if UI updates correctly", () => {
-
-  test("Testing 'updateUI' function...", () => {
-
-    expect(updateUI()).resolves.toThrow(Error)
-    expect(fetch).toHaveBeenCalledTimes(1);
-  })
+test("Testing if 404", async () => {    
+  await supertest(app).get('/test123').expect(404);  
 });
+

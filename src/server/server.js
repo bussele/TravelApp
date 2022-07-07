@@ -27,6 +27,10 @@ app.get('/', function (req, res) {
   res.sendFile('index.html')
 })
 
+app.get('/test', function (req, res) {
+  res.send('Server is working');
+})
+
 // Set port for server
 const port = 3000
 
@@ -136,3 +140,5 @@ const getPix = async (place) => {
     console.log("ERROR in Pix GET:", error);
   }
 }
+
+module.exports = app;
